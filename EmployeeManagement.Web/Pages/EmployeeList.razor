@@ -1,0 +1,19 @@
+﻿@page "/"
+<h3>EmployeeList </h3>
+
+@if (Employees == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <div class="card-deck">
+                    <Employee />
+
+        @foreach (var employee in Employees)
+        {
+            <EmployeeDisplay Employee="employee" OnEmployeeDeleted="DeleteEmployee"/>
+        }
+    </div>
+}
+

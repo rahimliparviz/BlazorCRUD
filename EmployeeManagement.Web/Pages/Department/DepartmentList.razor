@@ -1,0 +1,16 @@
+﻿@page "/departments"
+<h3>Department List</h3>
+
+<ul class="list-group cProductsList">
+    
+    @foreach (var department in _departments)
+    {
+        <li class="list-group-item d-flex">
+            <p class="p-0 m-0 flex-grow-1">@department.DepartmentName</p>
+            <DepartmentEdit Department="department"/>
+            <button class="btn-success">EDIT</button> 
+            <button class="btn-danger">DELETE</button>
+        </li>
+    }
+ 
+</ul>
